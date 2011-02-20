@@ -10,7 +10,8 @@
 
 @implementation tBeatViewController
 
-
+@synthesize twitterText;
+@synthesize musicPlayer;
 
 /*
 // The designated initializer. Override to perform setup that is required before the view is loaded.
@@ -61,6 +62,25 @@
 
 - (void)dealloc {
     [super dealloc];
+}
+
+-(IBAction) buttonClicked:(id) sender {
+	
+	NSString *text;
+	text = @"Cunnie";
+	twitterText.text = text;
+	[text release];
+	
+	musicPlayer = [MPMusicPlayerController iPodMusicPlayer];
+	MPMediaItem *currentItem = musicPlayer.nowPlayingItem;
+	if(currentItem == nil)
+	{
+		twitterText.text = @"nil grannie-O";
+	}
+	else {
+		twitterText.text = [currentItem valueForProperty:MPMediaItemPropertyArtist];
+	}
+	
 }
 
 @end

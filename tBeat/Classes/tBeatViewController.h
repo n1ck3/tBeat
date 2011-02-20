@@ -7,10 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MediaPlayer/MediaPlayer.h>
 
 @interface tBeatViewController : UIViewController {
-
+	IBOutlet UITextView *twitterText;
+	MPMusicPlayerController *musicPlayer; 
 }
+
+@property(nonatomic,retain) IBOutlet UITextView *twitterText;
+@property (nonatomic, retain) MPMusicPlayerController *musicPlayer;
+
+// When button is pressed
+-(IBAction) buttonClicked: (id) sender;
+
 
 @end
 
