@@ -35,20 +35,19 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-	
-	NSString *text;
-	text = @"Cunnie";
-	twitterText.text = text;
-	[text release];
-	
+
 	musicPlayer = [MPMusicPlayerController iPodMusicPlayer];
 	MPMediaItem *currentItem = musicPlayer.nowPlayingItem;
 	if(currentItem == nil)
 	{
-		twitterText.text = @"nil grannie-O";
+		twitterText.text = @"No song is currently playing. Please start a song and then restart the program to tweet.";
 	}
 	else {
-		twitterText.text = [currentItem valueForProperty:MPMediaItemPropertyArtist];
+		twitterText.text = @"Now playing ";
+		//twitterText.text = [currentItem valueForProperty:MPMediaItemPropertyArtist];
+		twitterText.text = [twitterText.text stringByAppendingString: [currentItem valueForProperty:MPMediaItemPropertyArtist]];
+		twitterText.text = [twitterText.text stringByAppendingString:@" with the song "];
+		twitterText.text = [twitterText.text stringByAppendingString: [currentItem valueForProperty:MPMediaItemPropertyTitle]];
 	}
 }
 
@@ -80,7 +79,13 @@
 }
 
 -(IBAction) buttonClicked:(id) sender {
+	// TODO: Code here should connect to Twitter and send a tweet, use the text
+	// in the twitterText variable.
 	
+	// Test: Change the text while when the button is pressed, verify that the 
+	// twitterText variable is availble here and that we can change it as well
+	// as seeing that we can update the text field. 
+	twitterText.text = @"Button pressed!";
 	
 }
 
