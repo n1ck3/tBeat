@@ -52,14 +52,13 @@
 }
 
 
-
-/*
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    //return (interfaceOrientation == UIInterfaceOrientationPortrait);
+	return NO;
 }
-*/
+
 
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.
@@ -85,7 +84,7 @@
 	// Test: Change the text while when the button is pressed, verify that the 
 	// twitterText variable is availble here and that we can change it as well
 	// as seeing that we can update the text field. 
-	twitterText.text = @"Button pressed!";
+	twitterText.text = @"Button pressed! Functionality for tweeting is yet to be done though.";
 	
 }
 
