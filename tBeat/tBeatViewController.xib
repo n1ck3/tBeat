@@ -45,7 +45,7 @@
 					<object class="IBUITextView" id="1016652596">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">274</int>
-						<string key="NSFrame">{{25, 132}, {269, 154}}</string>
+						<string key="NSFrame">{{24, 137}, {269, 154}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<object class="NSColor" key="IBUIBackgroundColor" id="64210924">
 							<int key="NSColorSpace">3</int>
@@ -65,7 +65,7 @@
 					<object class="IBUILabel" id="1031597682">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{65, 58}, {190, 43}}</string>
+						<string key="NSFrame">{{54, 39}, {210, 85}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -74,12 +74,17 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<string key="IBUIText">tBeat</string>
 						<object class="NSFont" key="IBUIFont">
-							<string key="NSName">Helvetica</string>
-							<double key="NSSize">36</double>
+							<string key="NSName">ArialRoundedMTBold</string>
+							<double key="NSSize">72</double>
 							<int key="NSfFlags">16</int>
 						</object>
 						<reference key="IBUITextColor" ref="64210924"/>
 						<reference key="IBUIHighlightedColor" ref="64210924"/>
+						<object class="NSColor" key="IBUIShadowColor">
+							<int key="NSColorSpace">1</int>
+							<bytes key="NSRGB">MC41NzE0Mjg1NzE0IDAuNTcxNDI4NTcxNCAwLjU3MTQyODU3MTQAA</bytes>
+						</object>
+						<string key="IBUIShadowOffset">{2, 2}</string>
 						<int key="IBUIBaselineAdjustment">1</int>
 						<float key="IBUIMinimumFontSize">15</float>
 						<int key="IBUITextAlignment">1</int>
@@ -87,16 +92,19 @@
 					<object class="IBUIButton" id="929178593">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{106, 326}, {107, 37}}</string>
+						<string key="NSFrame">{{80, 326}, {158, 51}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
-						<reference key="IBUIBackgroundColor" ref="64210924"/>
+						<object class="NSColor" key="IBUIBackgroundColor">
+							<int key="NSColorSpace">3</int>
+							<bytes key="NSWhite">MSAwAA</bytes>
+						</object>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<object class="NSFont" key="IBUIFont">
 							<string key="NSName">Helvetica-Bold</string>
-							<double key="NSSize">15</double>
+							<double key="NSSize">29</double>
 							<int key="NSfFlags">16</int>
 						</object>
 						<int key="IBUIButtonType">1</int>
@@ -221,17 +229,17 @@
 					<string>UIResponder</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<object class="NSAffineTransform">
-						<bytes key="NSTransformStruct">P4AAAL+AAABC1gAAw7YAAA</bytes>
+						<bytes key="NSTransformStruct">P4AAAL+AAABCoAAAw7WAAA</bytes>
 					</object>
-					<string>{{318, 146}, {320, 480}}</string>
+					<string>{{402, 89}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<object class="NSAffineTransform">
-						<bytes key="NSTransformStruct">P4AAAL+AAABB0AAAw42AAA</bytes>
+						<bytes key="NSTransformStruct">P4AAAL+AAABBwAAAw5IAAA</bytes>
 					</object>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<object class="NSAffineTransform">
-						<bytes key="NSTransformStruct">P4AAAL+AAABCugAAwpgAAA</bytes>
+						<bytes key="NSTransformStruct">P4AAAL+AAABCgAAAwvQAAA</bytes>
 					</object>
 				</object>
 			</object>
@@ -251,7 +259,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">15</int>
+			<int key="maxID">16</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
