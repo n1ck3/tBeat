@@ -1,0 +1,8 @@
+//
+// Prefix header for all source files of the 'tBeat' target in the 'tBeat' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+#endif

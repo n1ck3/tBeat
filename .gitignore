@@ -3,7 +3,7 @@
 *~.nib
 *.mode1v3
 
-build/
+tBeat/build/
 
 *.pbxuser
 *.perspective
