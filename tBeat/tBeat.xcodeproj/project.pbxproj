@@ -36,6 +36,7 @@
 		41619189131174090043B172 /* SA_OAuthTwitterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41619174131174090043B172 /* SA_OAuthTwitterController.m */; };
 		4161918A131174090043B172 /* SA_OAuthTwitterEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 41619176131174090043B172 /* SA_OAuthTwitterEngine.m */; };
 		4161918B131174090043B172 /* twitter_load.png in Resources */ = {isa = PBXBuildFile; fileRef = 41619177131174090043B172 /* twitter_load.png */; };
+		41EE2A991311800600A54025 /* default.png in Resources */ = {isa = PBXBuildFile; fileRef = 41EE2A981311800600A54025 /* default.png */; };
 		C384CD48131179DE00321AB6 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C384CD47131179DE00321AB6 /* MediaPlayer.framework */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +109,7 @@
 		41619175131174090043B172 /* SA_OAuthTwitterEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SA_OAuthTwitterEngine.h; sourceTree = "<group>"; };
 		41619176131174090043B172 /* SA_OAuthTwitterEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SA_OAuthTwitterEngine.m; sourceTree = "<group>"; };
 		41619177131174090043B172 /* twitter_load.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter_load.png; sourceTree = "<group>"; };
+		41EE2A981311800600A54025 /* default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default.png; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* tBeat-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "tBeat-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		C384CD47131179DE00321AB6 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -151,6 +153,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				41EE2A981311800600A54025 /* default.png */,
 				4161913C131174090043B172 /* Twitter+OAuth */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -340,6 +343,7 @@
 				41619178131174090043B172 /* jQueryInject.txt in Resources */,
 				41619179131174090043B172 /* jQueryInjectLandscape.txt in Resources */,
 				4161918B131174090043B172 /* twitter_load.png in Resources */,
+				41EE2A991311800600A54025 /* default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
