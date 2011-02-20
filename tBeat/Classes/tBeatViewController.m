@@ -31,12 +31,27 @@
 */
 
 
-/*
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
+	NSString *text;
+	text = @"Cunnie";
+	twitterText.text = text;
+	[text release];
+	
+	musicPlayer = [MPMusicPlayerController iPodMusicPlayer];
+	MPMediaItem *currentItem = musicPlayer.nowPlayingItem;
+	if(currentItem == nil)
+	{
+		twitterText.text = @"nil grannie-O";
+	}
+	else {
+		twitterText.text = [currentItem valueForProperty:MPMediaItemPropertyArtist];
+	}
 }
-*/
+
 
 
 /*
@@ -66,20 +81,6 @@
 
 -(IBAction) buttonClicked:(id) sender {
 	
-	NSString *text;
-	text = @"Cunnie";
-	twitterText.text = text;
-	[text release];
-	
-	musicPlayer = [MPMusicPlayerController iPodMusicPlayer];
-	MPMediaItem *currentItem = musicPlayer.nowPlayingItem;
-	if(currentItem == nil)
-	{
-		twitterText.text = @"nil grannie-O";
-	}
-	else {
-		twitterText.text = [currentItem valueForProperty:MPMediaItemPropertyArtist];
-	}
 	
 }
 
