@@ -38,6 +38,7 @@
      Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. 
 		 Games should use this method to pause the game.
      */
+		[viewController viewDidLoad];
 }
 
 
@@ -49,6 +50,7 @@
      If your application supports background execution, called instead of applicationWillTerminate: 
 		 when the user quits.
      */
+		[viewController viewDidLoad];
 }
 
 
