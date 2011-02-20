@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface tBeatAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
+@class tBeatViewController;
+
+@interface tBeatAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
-    UITabBarController *tabBarController;
+    tBeatViewController *viewController;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
+@property (nonatomic, retain) IBOutlet tBeatViewController *viewController;
 
 @end
+

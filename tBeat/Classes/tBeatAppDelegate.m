@@ -7,12 +7,12 @@
 //
 
 #import "tBeatAppDelegate.h"
-
+#import "tBeatViewController.h"
 
 @implementation tBeatAppDelegate
 
 @synthesize window;
-@synthesize tabBarController;
+@synthesize viewController;
 
 
 #pragma mark -
@@ -22,8 +22,8 @@
     
     // Override point for customization after application launch.
 
-    // Add the tab bar controller's view to the window and display.
-    [self.window addSubview:tabBarController.view];
+    // Add the view controller's view to the window and display.
+    [self.window addSubview:viewController.view];
     [self.window makeKeyAndVisible];
 
     return YES;
@@ -69,22 +69,6 @@
 
 
 #pragma mark -
-#pragma mark UITabBarControllerDelegate methods
-
-/*
-// Optional UITabBarControllerDelegate method.
-- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
-}
-*/
-
-/*
-// Optional UITabBarControllerDelegate method.
-- (void)tabBarController:(UITabBarController *)tabBarController didEndCustomizingViewControllers:(NSArray *)viewControllers changed:(BOOL)changed {
-}
-*/
-
-
-#pragma mark -
 #pragma mark Memory management
 
 - (void)applicationDidReceiveMemoryWarning:(UIApplication *)application {
@@ -95,10 +79,10 @@
 
 
 - (void)dealloc {
-    [tabBarController release];
+    [viewController release];
     [window release];
     [super dealloc];
 }
 
-@end
 
+@end
