@@ -19,7 +19,7 @@
 
 // When button is pressed
 -(IBAction) buttonClicked: (id) sender;
-
+-(void)setTwitterTextAccordingToPlaybackState;
 
 @end
 

@@ -31,26 +31,86 @@
 */
 
 
-
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad {
-    [super viewDidLoad];
-
-	musicPlayer = [MPMusicPlayerController iPodMusicPlayer];
+// Sets the twitter text depending if a song is playing or not.
+-(void)setTwitterText 
+{
 	MPMediaItem *currentItem = musicPlayer.nowPlayingItem;
 	if(currentItem == nil)
 	{
 		twitterText.text = @"No song is currently playing. Please start a song and then restart the program to tweet.";
 	}
 	else {
+		// TODO: Do refactor this mess
 		twitterText.text = @"Now playing ";
-		//twitterText.text = [currentItem valueForProperty:MPMediaItemPropertyArtist];
 		twitterText.text = [twitterText.text stringByAppendingString: [currentItem valueForProperty:MPMediaItemPropertyArtist]];
 		twitterText.text = [twitterText.text stringByAppendingString:@" with the song "];
 		twitterText.text = [twitterText.text stringByAppendingString: [currentItem valueForProperty:MPMediaItemPropertyTitle]];
+		twitterText.text = [twitterText.text stringByAppendingString:@". Rating: "];
+		twitterText.text = [twitterText.text stringByAppendingString: [[currentItem valueForProperty:MPMediaItemPropertyRating] stringValue]];
+		twitterText.text = [twitterText.text stringByAppendingString:@"/5."];
+	}
+	
+}
+
+
+// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+	musicPlayer = [MPMusicPlayerController iPodMusicPlayer];
+	
+	// Set the start text..
+	[self setTwitterTextAccordingToPlaybackState];
+	
+	// Subscribe for notifications of playback changes
+	// TODO: Put this in a separate function. Should it be called from somewhere else than viewDidLoad()?
+	NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+	
+	[notificationCenter
+	 addObserver: self
+	 selector:    @selector (handleNowPlayingItemChanged:)
+	 name:        MPMusicPlayerControllerNowPlayingItemDidChangeNotification
+	 object:      musicPlayer];
+	
+	
+	[notificationCenter
+	 addObserver: self
+	 selector:    @selector (handlePlaybackStateChanged:)
+	 name:        MPMusicPlayerControllerPlaybackStateDidChangeNotification
+	 object:      musicPlayer];
+	
+	[musicPlayer beginGeneratingPlaybackNotifications];
+}
+
+
+// When the playback state changes, we get called here
+- (void) handlePlaybackStateChanged: (id) notification 
+{	
+	[self setTwitterTextAccordingToPlaybackState];
+}
+
+
+- (void) setTwitterTextAccordingToPlaybackState
+{
+	MPMusicPlaybackState playbackState = [musicPlayer playbackState];
+
+	if (playbackState == MPMusicPlaybackStatePlaying) 
+	{
+		[self setTwitterText];
+	} 
+	else if (playbackState == MPMusicPlaybackStateStopped ||
+						playbackState == MPMusicPlaybackStatePaused ||
+						playbackState == MPMusicPlaybackStateInterrupted) 
+	{
+		twitterText.text = @"Music is stopped or paused, you will get to choose a song from the library in a coming release.";		
 	}
 }
 
+// When the now-playing item changes, update the media item artwork and the now-playing label.
+- (void) handleNowPlayingItemChanged: (id) notification 
+{
+	[self setTwitterTextAccordingToPlaybackState]; // TODO: should this really call on setTwitterTextAccordingToPlaybackState or setTwitterText?
+}
 
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -70,11 +130,29 @@
 - (void)viewDidUnload {
 	// Release any retained subviews of the main view.
 	// e.g. self.myOutlet = nil;
+	twitterText.text = @"viewDidUnload";
+	/*
+	[[NSNotificationCenter defaultCenter]
+	 removeObserver: self
+	 name:           MPMusicPlayerControllerNowPlayingItemDidChangeNotification
+	 object:         musicPlayer];
+	
+	[[NSNotificationCenter defaultCenter]
+	 removeObserver: self
+	 name:           MPMusicPlayerControllerPlaybackStateDidChangeNotification
+	 object:         musicPlayer];
+	 [musicPlayer endGeneratingPlaybackNotifications];
+	*/
 }
 
 
-- (void)dealloc {
-    [super dealloc];
+- (void)dealloc 
+{
+
+	
+	
+	//[musicPlayer dealloc]; TODO: should this be done?
+	[super dealloc];
 }
 
 -(IBAction) buttonClicked:(id) sender {
