@@ -17,7 +17,7 @@
 #import "SA_OAuthTwitterController.h"
 
 // Constants
-static NSString* const kGGTwitterLoadingBackgroundImage = @"twitter_load.png";
+static NSString* const kGGTwitterLoadingBackgroundImage = @"loading.png";
 
 @interface SA_OAuthTwitterController ()
 @property (nonatomic, readonly) UIToolbar *pinCopyPromptBar;

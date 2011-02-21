@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import <MediaPlayer/MediaPlayer.h>
+#import "SA_OAuthTwitterController.h"
 
-@interface tBeatViewController : UIViewController {
+@class SA_OAuthTwitterEngine;
+
+@interface tBeatViewController : UIViewController <SA_OAuthTwitterControllerDelegate> {
 	IBOutlet UITextView *twitterText;
 	MPMusicPlayerController *musicPlayer; 
+	SA_OAuthTwitterEngine *_engine;
 }
 
 @property(nonatomic,retain) IBOutlet UITextView *twitterText;
