@@ -15,6 +15,9 @@
 		2899E5220DE3E06400AC0155 /* tBeatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* tBeatViewController.xib */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28D7ACF80DDB3853001CB0EB /* tBeatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* tBeatViewController.m */; };
+		410224881316FB2D0025F78C /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 410224861316FB2D0025F78C /* Default.png */; };
+		410224891316FB2D0025F78C /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 410224871316FB2D0025F78C /* icon.png */; };
+		410224901316FB5E0025F78C /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 4102248F1316FB5E0025F78C /* Background.png */; };
 		41619139131173B60043B172 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 41619138131173B60043B172 /* libxml2.dylib */; };
 		41619178131174090043B172 /* jQueryInject.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4161913E131174090043B172 /* jQueryInject.txt */; };
 		41619179131174090043B172 /* jQueryInjectLandscape.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4161913F131174090043B172 /* jQueryInjectLandscape.txt */; };
@@ -35,9 +38,7 @@
 		41619188131174090043B172 /* NSString+UUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 41619171131174090043B172 /* NSString+UUID.m */; };
 		41619189131174090043B172 /* SA_OAuthTwitterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41619174131174090043B172 /* SA_OAuthTwitterController.m */; };
 		4161918A131174090043B172 /* SA_OAuthTwitterEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 41619176131174090043B172 /* SA_OAuthTwitterEngine.m */; };
-		4170BB2D13130EEA00CF7D3C /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4170BB2C13130EEA00CF7D3C /* icon.png */; };
-		4170BB711313176100CF7D3C /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 4170BB701313176100CF7D3C /* loading.png */; };
-		4176F68D1313191400B13F17 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4176F68C1313191400B13F17 /* Default.png */; };
+		41A7418B1316FBA5007EFF54 /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 41A7418A1316FBA5007EFF54 /* loading.png */; };
 		C384CD48131179DE00321AB6 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C384CD47131179DE00321AB6 /* MediaPlayer.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,9 @@
 		28D7ACF70DDB3853001CB0EB /* tBeatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tBeatViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* tBeat_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tBeat_Prefix.pch; sourceTree = "<group>"; };
+		410224861316FB2D0025F78C /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		410224871316FB2D0025F78C /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		4102248F1316FB5E0025F78C /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
 		41619138131173B60043B172 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		4161913E131174090043B172 /* jQueryInject.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jQueryInject.txt; sourceTree = "<group>"; };
 		4161913F131174090043B172 /* jQueryInjectLandscape.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jQueryInjectLandscape.txt; sourceTree = "<group>"; };
@@ -109,9 +113,7 @@
 		41619174131174090043B172 /* SA_OAuthTwitterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SA_OAuthTwitterController.m; sourceTree = "<group>"; };
 		41619175131174090043B172 /* SA_OAuthTwitterEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SA_OAuthTwitterEngine.h; sourceTree = "<group>"; };
 		41619176131174090043B172 /* SA_OAuthTwitterEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SA_OAuthTwitterEngine.m; sourceTree = "<group>"; };
-		4170BB2C13130EEA00CF7D3C /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		4170BB701313176100CF7D3C /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading.png; sourceTree = "<group>"; };
-		4176F68C1313191400B13F17 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		41A7418A1316FBA5007EFF54 /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading.png; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* tBeat-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "tBeat-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		C384CD47131179DE00321AB6 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -155,8 +157,9 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				4176F68C1313191400B13F17 /* Default.png */,
-				4170BB2C13130EEA00CF7D3C /* icon.png */,
+				4102248F1316FB5E0025F78C /* Background.png */,
+				410224861316FB2D0025F78C /* Default.png */,
+				410224871316FB2D0025F78C /* icon.png */,
 				4161913C131174090043B172 /* Twitter+OAuth */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -283,7 +286,7 @@
 		41619172131174090043B172 /* SAOAuthTwitterEngine */ = {
 			isa = PBXGroup;
 			children = (
-				4170BB701313176100CF7D3C /* loading.png */,
+				41A7418A1316FBA5007EFF54 /* loading.png */,
 				41619173131174090043B172 /* SA_OAuthTwitterController.h */,
 				41619174131174090043B172 /* SA_OAuthTwitterController.m */,
 				41619175131174090043B172 /* SA_OAuthTwitterEngine.h */,
@@ -345,9 +348,10 @@
 				2899E5220DE3E06400AC0155 /* tBeatViewController.xib in Resources */,
 				41619178131174090043B172 /* jQueryInject.txt in Resources */,
 				41619179131174090043B172 /* jQueryInjectLandscape.txt in Resources */,
-				4170BB2D13130EEA00CF7D3C /* icon.png in Resources */,
-				4170BB711313176100CF7D3C /* loading.png in Resources */,
-				4176F68D1313191400B13F17 /* Default.png in Resources */,
+				410224881316FB2D0025F78C /* Default.png in Resources */,
+				410224891316FB2D0025F78C /* icon.png in Resources */,
+				410224901316FB5E0025F78C /* Background.png in Resources */,
+				41A7418B1316FBA5007EFF54 /* loading.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
