@@ -16,6 +16,7 @@
 	IBOutlet UITextView *twitterText;
 	MPMusicPlayerController *musicPlayer; 
 	SA_OAuthTwitterEngine *_engine;
+	BOOL twitterTextSendable;
 }
 
 @property(nonatomic,retain) IBOutlet UITextView *twitterText;

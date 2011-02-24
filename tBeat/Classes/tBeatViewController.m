@@ -104,6 +104,7 @@
 	if(currentItem == nil)
 	{
 		twitterText.text = @"No song is currently playing. Please start a song and then start the program to tweet.";
+		twitterTextSendable = FALSE;
 	}
 	else 
 	{
@@ -122,6 +123,8 @@
 		NSURL *tinyUrl = [NSURL URLWithString: longGoogleUrl];
 		NSString *link = [NSString stringWithContentsOfURL:tinyUrl encoding:NSASCIIStringEncoding error:nil];
 		
+		twitterTextSendable = TRUE;
+		
 		twitterText.text = [NSString stringWithFormat:
 												@"Listening to %@ by %@, %@/5. %@ #tBeat", 
 												titleSpaces, artistSpaces, rating, link];
@@ -135,6 +138,7 @@
     [super viewDidLoad];
 
 	NSLog(@"viewDidLoad()");
+	twitterTextSendable = FALSE;
 	
 	musicPlayer = [MPMusicPlayerController iPodMusicPlayer];
 	
@@ -182,6 +186,7 @@
 						playbackState == MPMusicPlaybackStateInterrupted) 
 	{
 		twitterText.text = @"Music is stopped or paused, you will get to choose a song from the library in a coming release.";
+		twitterTextSendable = FALSE;
 	}
 }
 
@@ -237,8 +242,12 @@
 	// TODO: Code here should connect to Twitter and send a tweet, use the text
 	// in the twitterText variable.
 	
-	[_engine sendUpdate: [NSString stringWithFormat: twitterText.text]];
-	twitterText.text = @"Tweet sent!";
+	if (twitterTextSendable == TRUE) 
+	{
+		[_engine sendUpdate: [NSString stringWithFormat: twitterText.text]];
+		twitterText.text = @"Tweet sent!";
+		twitterTextSendable = FALSE;
+	}
 }
 
 @end
