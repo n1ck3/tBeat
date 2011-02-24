@@ -61,7 +61,7 @@
 					<object class="IBUITextView" id="1016652596">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">274</int>
-						<string key="NSFrame">{{58, 179}, {206, 107}}</string>
+						<string key="NSFrame">{{34, 159}, {252, 117}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
@@ -72,6 +72,10 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<bool key="IBUIEditable">NO</bool>
 						<string key="IBUIText"/>
+						<object class="NSColor" key="IBUITextColor">
+							<int key="NSColorSpace">1</int>
+							<bytes key="NSRGB">MC4xMzI2NTMwNjEyIDAuMTMyNjUzMDYxMiAwLjEzMjY1MzA2MTIAA</bytes>
+						</object>
 						<int key="IBUITextAlignment">1</int>
 						<object class="IBUITextInputTraits" key="IBUITextInputTraits">
 							<int key="IBUIAutocapitalizationType">2</int>
@@ -81,7 +85,7 @@
 					<object class="IBUIButton" id="929178593">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{80, 348}, {158, 51}}</string>
+						<string key="NSFrame">{{80, 343}, {158, 51}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">1</int>
@@ -104,7 +108,7 @@
 						</object>
 						<object class="NSColor" key="IBUINormalTitleColor">
 							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MC4yNTU3NDQwMjgyIDAuNjg4Nzk3NzQwMyAwLjcwNDA4MTYzMjcAA</bytes>
+							<bytes key="NSRGB">MC4yNzU0MjQyMzQ3IDAuNTU5NDEwMTEwNSAwLjY4ODc3NTUxMDIAA</bytes>
 						</object>
 						<object class="NSColor" key="IBUINormalTitleShadowColor">
 							<int key="NSColorSpace">3</int>
@@ -115,8 +119,8 @@
 				<string key="NSFrameSize">{320, 460}</string>
 				<reference key="NSSuperview"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
-					<int key="NSColorSpace">1</int>
-					<bytes key="NSRGB">MC40NjQ0NjAzNzg3IDAuODQ1NzUxMjE1MSAxAA</bytes>
+					<int key="NSColorSpace">2</int>
+					<bytes key="NSRGB">MC4xMzMzMzMzNDAzIDAuNTcyNTQ5MDQ1MSAwLjc0NTA5ODA1NDQAA</bytes>
 				</object>
 				<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
@@ -225,7 +229,7 @@
 					</object>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<object class="NSAffineTransform"/>
-					<string>{{376, 164}, {320, 480}}</string>
+					<string>{{462, 103}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<object class="NSAffineTransform">
