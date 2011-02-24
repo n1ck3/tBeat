@@ -58,7 +58,9 @@
 //=============================================================================================================================
 #pragma mark ViewController Stuff
 
+
 - (void) viewDidAppear: (BOOL)animated {
+ 
 	if (_engine) return;
 	_engine = [[SA_OAuthTwitterEngine alloc] initOAuthWithDelegate: self];
 	_engine.consumerKey = kOAuthConsumerKey;
@@ -68,11 +70,14 @@
 	
 	if (controller) 
 		[self presentModalViewController: controller animated: YES];
+	/*
 	else {
 		[_engine sendUpdate: [NSString stringWithFormat: @"Already Updated. %@", [NSDate date]]];
 	}
+	 */
 	
 }
+ 
 
 /*
 // The designated initializer. Override to perform setup that is required before the view is loaded.
@@ -98,17 +103,28 @@
 	MPMediaItem *currentItem = musicPlayer.nowPlayingItem;
 	if(currentItem == nil)
 	{
-		twitterText.text = @"No song is currently playing. Please start a song and then restart the program to tweet.";
+		twitterText.text = @"No song is currently playing. Please start a song and then start the program to tweet.";
 	}
-	else {
-		// TODO: Do refactor this mess
-		twitterText.text = @"Now playing ";
-		twitterText.text = [twitterText.text stringByAppendingString: [currentItem valueForProperty:MPMediaItemPropertyArtist]];
-		twitterText.text = [twitterText.text stringByAppendingString:@" with the song "];
-		twitterText.text = [twitterText.text stringByAppendingString: [currentItem valueForProperty:MPMediaItemPropertyTitle]];
-		twitterText.text = [twitterText.text stringByAppendingString:@". Rating: "];
-		twitterText.text = [twitterText.text stringByAppendingString: [[currentItem valueForProperty:MPMediaItemPropertyRating] stringValue]];
-		twitterText.text = [twitterText.text stringByAppendingString:@"/5."];
+	else 
+	{
+		NSString *artistSpaces = [currentItem valueForProperty:MPMediaItemPropertyArtist];
+		NSString *artistNoSpaces = [artistSpaces stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+		
+		NSString *titleSpaces = [currentItem valueForProperty:MPMediaItemPropertyTitle];
+		NSString *titleNoSpaces = [titleSpaces stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+		
+		NSString *rating = [[currentItem valueForProperty:MPMediaItemPropertyRating] stringValue];
+		
+		NSString *longGoogleUrl = [NSString stringWithFormat:
+															 @"http://tinyurl.com/api-create.php?url=http://google.com/search?btnI=1&q=youtube+%@+%@",
+															 artistNoSpaces, titleNoSpaces];
+
+		NSURL *tinyUrl = [NSURL URLWithString: longGoogleUrl];
+		NSString *link = [NSString stringWithContentsOfURL:tinyUrl encoding:NSASCIIStringEncoding error:nil];
+		
+		twitterText.text = [NSString stringWithFormat:
+												@"Listening to %@ by %@, %@/5. %@ #tBeat", 
+												titleSpaces, artistSpaces, rating, link];
 	}
 	
 }
@@ -118,13 +134,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+	NSLog(@"viewDidLoad()");
+	
 	musicPlayer = [MPMusicPlayerController iPodMusicPlayer];
 	
 	// Set the start text..
 	[self setTwitterTextAccordingToPlaybackState];
 	
 	// Subscribe for notifications of playback changes
-	// TODO: Put this in a separate function. Should it be called from somewhere else than viewDidLoad()?
+	// TODO: Put this in a separate function.
 	NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
 	
 	[notificationCenter
@@ -163,21 +181,20 @@
 						playbackState == MPMusicPlaybackStatePaused ||
 						playbackState == MPMusicPlaybackStateInterrupted) 
 	{
-		twitterText.text = @"Music is stopped or paused, you will get to choose a song from the library in a coming release.";		
+		twitterText.text = @"Music is stopped or paused, you will get to choose a song from the library in a coming release.";
 	}
 }
 
 // When the now-playing item changes, update the media item artwork and the now-playing label.
 - (void) handleNowPlayingItemChanged: (id) notification 
 {
-	[self setTwitterTextAccordingToPlaybackState]; // TODO: should this really call on setTwitterTextAccordingToPlaybackState or setTwitterText?
+	[self setTwitterTextAccordingToPlaybackState]; 
 }
 
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Return YES for supported orientations
-    //return (interfaceOrientation == UIInterfaceOrientationPortrait);
-	return NO;
+	return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 
@@ -191,37 +208,37 @@
 - (void)viewDidUnload {
 	// Release any retained subviews of the main view.
 	// e.g. self.myOutlet = nil;
-	twitterText.text = @"viewDidUnload";
-	/*
+	
+	NSLog(@"viewDidUnload()");
+}
+
+
+- (void)dealloc {
+	
 	[[NSNotificationCenter defaultCenter]
-	 removeObserver: self
-	 name:           MPMusicPlayerControllerNowPlayingItemDidChangeNotification
-	 object:         musicPlayer];
+		removeObserver: self
+		name:           MPMusicPlayerControllerNowPlayingItemDidChangeNotification
+		object:         musicPlayer];
 	
 	[[NSNotificationCenter defaultCenter]
 	 removeObserver: self
 	 name:           MPMusicPlayerControllerPlaybackStateDidChangeNotification
 	 object:         musicPlayer];
-	 [musicPlayer endGeneratingPlaybackNotifications];
-	*/
-}
-
-
-- (void)dealloc {
-    [_engine release];
-    [super dealloc];
-    //[musicPlayer dealloc]; TODO: should this be done?
+	[musicPlayer endGeneratingPlaybackNotifications];
+	
+	[musicPlayer release];
+	[twitterText release];
+	
+	[_engine release];
+	[super dealloc];
 }
 
 -(IBAction) buttonClicked:(id) sender {
 	// TODO: Code here should connect to Twitter and send a tweet, use the text
 	// in the twitterText variable.
 	
-	// Test: Change the text while when the button is pressed, verify that the 
-	// twitterText variable is availble here and that we can change it as well
-	// as seeing that we can update the text field. 
-	
-	// twitterText.text = @"Button pressed! Functionality for tweeting is yet to be done though.";
+	[_engine sendUpdate: [NSString stringWithFormat: twitterText.text]];
+	twitterText.text = @"Tweet sent!";
 }
 
 @end

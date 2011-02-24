@@ -39,6 +39,10 @@
 		4170BB711313176100CF7D3C /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 4170BB701313176100CF7D3C /* loading.png */; };
 		4176F68D1313191400B13F17 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4176F68C1313191400B13F17 /* Default.png */; };
 		C384CD48131179DE00321AB6 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C384CD47131179DE00321AB6 /* MediaPlayer.framework */; };
+		C3DEEF781315AF91008FE462 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3DEEF771315AF91008FE462 /* CFNetwork.framework */; };
+		C3DEEF7A1315AFAD008FE462 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3DEEF791315AFAD008FE462 /* SystemConfiguration.framework */; };
+		C3DEEF7C1315AFC0008FE462 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3DEEF7B1315AFC0008FE462 /* MobileCoreServices.framework */; };
+		C3DEEF7E1315B00B008FE462 /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C3DEEF7D1315B00B008FE462 /* libz.1.2.3.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -114,6 +118,10 @@
 		4176F68C1313191400B13F17 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* tBeat-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "tBeat-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		C384CD47131179DE00321AB6 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		C3DEEF771315AF91008FE462 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		C3DEEF791315AFAD008FE462 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C3DEEF7B1315AFC0008FE462 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		C3DEEF7D1315B00B008FE462 /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +135,10 @@
 				41619139131173B60043B172 /* libxml2.dylib in Frameworks */,
 				4161917A131174090043B172 /* libOAuth.a in Frameworks */,
 				C384CD48131179DE00321AB6 /* MediaPlayer.framework in Frameworks */,
+				C3DEEF781315AF91008FE462 /* CFNetwork.framework in Frameworks */,
+				C3DEEF7A1315AFAD008FE462 /* SystemConfiguration.framework in Frameworks */,
+				C3DEEF7C1315AFC0008FE462 /* MobileCoreServices.framework in Frameworks */,
+				C3DEEF7E1315B00B008FE462 /* libz.1.2.3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +176,10 @@
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				41619138131173B60043B172 /* libxml2.dylib */,
+				C3DEEF771315AF91008FE462 /* CFNetwork.framework */,
+				C3DEEF791315AFAD008FE462 /* SystemConfiguration.framework */,
+				C3DEEF7B1315AFC0008FE462 /* MobileCoreServices.framework */,
+				C3DEEF7D1315B00B008FE462 /* libz.1.2.3.dylib */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
