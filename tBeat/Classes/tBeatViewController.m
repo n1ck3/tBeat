@@ -9,8 +9,8 @@
 #import "tBeatViewController.h"
 #import "SA_OAuthTwitterEngine.h"
 
-#define kOAuthConsumerKey				@"OPNhSkLw7brs5vt00uwEyQ"							//REPLACE ME
-#define kOAuthConsumerSecret			@"zYC7IHRYBJG34Rdxo2DrCK3xIWJJAErx67wwPpayyg"		//REPLACE ME
+#define kOAuthConsumerKey				@"aYYW3aVNyuOd0mZXwGvjQ"
+#define kOAuthConsumerSecret			@"NeqlwlnT2NpS7ipQG3hBs6NnhLNJT2dEz4H43MVtM"
 
 @implementation tBeatViewController
 
