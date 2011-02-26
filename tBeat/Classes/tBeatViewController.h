@@ -15,6 +15,7 @@
 
 @interface tBeatViewController : UIViewController <SA_OAuthTwitterControllerDelegate, FlipsideViewControllerDelegate> {
 	IBOutlet UITextView *twitterText;
+	IBOutlet UIButton *tweetButton;
 	MPMusicPlayerController *musicPlayer; 
 	SA_OAuthTwitterEngine *_engine;
 	BOOL twitterTextSendable;
@@ -23,6 +24,7 @@
 - (IBAction)showInfo:(id)sender;
 
 @property(nonatomic,retain) IBOutlet UITextView *twitterText;
+@property (nonatomic, retain) UIButton *tweetButton;
 @property (nonatomic, retain) MPMusicPlayerController *musicPlayer;
 
 // When button is pressed

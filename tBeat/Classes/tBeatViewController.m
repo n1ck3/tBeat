@@ -16,6 +16,7 @@
 
 @synthesize twitterText;
 @synthesize musicPlayer;
+@synthesize tweetButton;
 
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller {
     
@@ -120,7 +121,7 @@
 	if(currentItem == nil)
 	{
 		twitterText.text = @"No song is currently playing. Please start a song and then start the program to tweet.";
-		twitterTextSendable = FALSE;
+		[tweetButton setEnabled: FALSE];
 	}
 	else 
 	{
@@ -139,7 +140,7 @@
 		NSURL *tinyUrl = [NSURL URLWithString: longGoogleUrl];
 		NSString *link = [NSString stringWithContentsOfURL:tinyUrl encoding:NSASCIIStringEncoding error:nil];
 		
-		twitterTextSendable = TRUE;
+		[tweetButton setEnabled: TRUE];
 		
 		twitterText.text = [NSString stringWithFormat:
 												@"Listening to %@ by %@, %@/5. %@ #tBeat", 
@@ -154,7 +155,7 @@
     [super viewDidLoad];
 
 	NSLog(@"viewDidLoad()");
-	twitterTextSendable = FALSE;
+	[tweetButton setEnabled: FALSE];
 	
 	musicPlayer = [MPMusicPlayerController iPodMusicPlayer];
 	
@@ -202,7 +203,7 @@
 						playbackState == MPMusicPlaybackStateInterrupted) 
 	{
 		twitterText.text = @"Music is stopped or paused, you will get to choose a song from the library in a coming release.";
-		twitterTextSendable = FALSE;
+		[tweetButton setEnabled: FALSE];
 	}
 }
 
@@ -257,17 +258,16 @@
 -(IBAction) buttonClicked:(id) sender {
 	// TODO: Code here should connect to Twitter and send a tweet, use the text
 	// in the twitterText variable.
-	
-	if (twitterTextSendable == TRUE) 
+	if(tweetButton.isEnabled)
 	{
 		[_engine sendUpdate: [NSString stringWithFormat: twitterText.text]]; 
 		twitterText.text = @"Tweet sent!";
-		twitterTextSendable = FALSE;
+		[tweetButton setEnabled: FALSE];
 	}
 }
 
 -(IBAction) unlinkTwitterButtonClicked:(id) sender {
-	unlinkTwitterButtonClicked
+	twitterText.text = @"Unlinked!";
 }
 
 @end
