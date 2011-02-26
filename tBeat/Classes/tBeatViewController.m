@@ -17,6 +17,22 @@
 @synthesize twitterText;
 @synthesize musicPlayer;
 
+- (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller {
+    
+	[self dismissModalViewControllerAnimated:YES];
+}
+
+
+- (IBAction)showInfo:(id)sender {    
+	
+	FlipsideViewController *controller = [[FlipsideViewController alloc] initWithNibName:@"FlipsideView" bundle:nil];
+	controller.delegate = self;
+	
+	controller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+	[self presentModalViewController:controller animated:YES];
+	
+	[controller release];
+}
 
 //=============================================================================================================================
 #pragma mark SA_OAuthTwitterEngineDelegate
@@ -244,10 +260,14 @@
 	
 	if (twitterTextSendable == TRUE) 
 	{
-		[_engine sendUpdate: [NSString stringWithFormat: twitterText.text]];
+		[_engine sendUpdate: [NSString stringWithFormat: twitterText.text]]; 
 		twitterText.text = @"Tweet sent!";
 		twitterTextSendable = FALSE;
 	}
+}
+
+-(IBAction) unlinkTwitterButtonClicked:(id) sender {
+	unlinkTwitterButtonClicked
 }
 
 @end

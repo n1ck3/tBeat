@@ -37,6 +37,8 @@
 		41619189131174090043B172 /* SA_OAuthTwitterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41619174131174090043B172 /* SA_OAuthTwitterController.m */; };
 		4161918A131174090043B172 /* SA_OAuthTwitterEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 41619176131174090043B172 /* SA_OAuthTwitterEngine.m */; };
 		418B389213171E6B00543F6F /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 418B389113171E6B00543F6F /* icon.png */; };
+		419F86961319903200BE0904 /* FlipsideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 419F86951319903200BE0904 /* FlipsideView.xib */; };
+		419F869F1319916300BE0904 /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 419F869E1319916300BE0904 /* FlipsideViewController.m */; };
 		41A7418B1316FBA5007EFF54 /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 41A7418A1316FBA5007EFF54 /* loading.png */; };
 		41C6AFF7131706A7005D7B94 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 41C6AFF6131706A7005D7B94 /* Background.png */; };
 		C384CD48131179DE00321AB6 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C384CD47131179DE00321AB6 /* MediaPlayer.framework */; };
@@ -116,6 +118,9 @@
 		41619175131174090043B172 /* SA_OAuthTwitterEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SA_OAuthTwitterEngine.h; sourceTree = "<group>"; };
 		41619176131174090043B172 /* SA_OAuthTwitterEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SA_OAuthTwitterEngine.m; sourceTree = "<group>"; };
 		418B389113171E6B00543F6F /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		419F86951319903200BE0904 /* FlipsideView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlipsideView.xib; sourceTree = "<group>"; };
+		419F869D1319916300BE0904 /* FlipsideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipsideViewController.h; sourceTree = "<group>"; };
+		419F869E1319916300BE0904 /* FlipsideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipsideViewController.m; sourceTree = "<group>"; };
 		41A7418A1316FBA5007EFF54 /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading.png; sourceTree = "<group>"; };
 		41C6AFF6131706A7005D7B94 /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* tBeat-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "tBeat-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
@@ -150,6 +155,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				419F869D1319916300BE0904 /* FlipsideViewController.h */,
+				419F869E1319916300BE0904 /* FlipsideViewController.m */,
 				1D3623240D0F684500981E51 /* tBeatAppDelegate.h */,
 				1D3623250D0F684500981E51 /* tBeatAppDelegate.m */,
 				28D7ACF60DDB3853001CB0EB /* tBeatViewController.h */,
@@ -199,6 +206,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				419F86951319903200BE0904 /* FlipsideView.xib */,
 				2899E5210DE3E06400AC0155 /* tBeatViewController.xib */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* tBeat-Info.plist */,
@@ -368,6 +376,7 @@
 				41A7418B1316FBA5007EFF54 /* loading.png in Resources */,
 				41C6AFF7131706A7005D7B94 /* Background.png in Resources */,
 				418B389213171E6B00543F6F /* icon.png in Resources */,
+				419F86961319903200BE0904 /* FlipsideView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +406,7 @@
 				41619188131174090043B172 /* NSString+UUID.m in Sources */,
 				41619189131174090043B172 /* SA_OAuthTwitterController.m in Sources */,
 				4161918A131174090043B172 /* SA_OAuthTwitterEngine.m in Sources */,
+				419F869F1319916300BE0904 /* FlipsideViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,7 +436,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Niclas Helbro (A9WBB352ZC)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = tBeat_Prefix.pch;
@@ -437,7 +447,7 @@
 					"\"$(SRCROOT)/Twitter+OAuth/Libraries & Headers\"",
 				);
 				PRODUCT_NAME = tBeat;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "50CD8535-8376-4067-8DED-F4504C7D2E56";
 				SDKROOT = iphoneos4.2;
 				VALIDATE_PRODUCT = YES;
 			};
