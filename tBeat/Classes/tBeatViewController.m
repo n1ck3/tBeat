@@ -125,28 +125,35 @@
 	}
 	else 
 	{
-		NSString *artistSpaces = [currentItem valueForProperty:MPMediaItemPropertyArtist];
-		NSString *artistNoSpaces = [artistSpaces stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+		[self composeTwitterText: currentItem];
 		
-		NSString *titleSpaces = [currentItem valueForProperty:MPMediaItemPropertyTitle];
-		NSString *titleNoSpaces = [titleSpaces stringByReplacingOccurrencesOfString:@" " withString:@"+"];
-		
-		NSString *rating = [[currentItem valueForProperty:MPMediaItemPropertyRating] stringValue];
-		
-		NSString *longGoogleUrl = [NSString stringWithFormat:
-															 @"http://tinyurl.com/api-create.php?url=http://google.com/search?btnI=1&q=youtube+%@+%@",
-															 artistNoSpaces, titleNoSpaces];
-
-		NSURL *tinyUrl = [NSURL URLWithString: longGoogleUrl];
-		NSString *link = [NSString stringWithContentsOfURL:tinyUrl encoding:NSASCIIStringEncoding error:nil];
-		
-		[tweetButton setEnabled: TRUE];
-		
-		twitterText.text = [NSString stringWithFormat:
-												@"Listening to %@ by %@, %@/5. %@ #tBeat", 
-												titleSpaces, artistSpaces, rating, link];
 	}
 	
+}
+
+- (void) composeTwitterText: (MPMediaItem *) musicItem
+{
+	
+	NSString *artistSpaces = [musicItem valueForProperty:MPMediaItemPropertyArtist];
+	NSString *artistNoSpaces = [artistSpaces stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+	
+	NSString *titleSpaces = [musicItem valueForProperty:MPMediaItemPropertyTitle];
+	NSString *titleNoSpaces = [titleSpaces stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+	
+	NSString *rating = [[musicItem valueForProperty:MPMediaItemPropertyRating] stringValue];
+	
+	NSString *longGoogleUrl = [NSString stringWithFormat:
+														 @"http://tinyurl.com/api-create.php?url=http://google.com/search?btnI=1&q=youtube+%@+%@",
+														 artistNoSpaces, titleNoSpaces];
+	
+	NSURL *tinyUrl = [NSURL URLWithString: longGoogleUrl];
+	NSString *link = [NSString stringWithContentsOfURL:tinyUrl encoding:NSASCIIStringEncoding error:nil];
+	
+	[tweetButton setEnabled: TRUE];
+	
+	twitterText.text = [NSString stringWithFormat:
+											@"Listening to %@ by %@, %@/5. %@ #tBeat", 
+											titleSpaces, artistSpaces, rating, link];
 }
 
 
@@ -230,8 +237,6 @@
 - (void)viewDidUnload {
 	// Release any retained subviews of the main view.
 	// e.g. self.myOutlet = nil;
-	
-	NSLog(@"viewDidUnload()");
 }
 
 
@@ -269,5 +274,37 @@
 -(IBAction) unlinkTwitterButtonClicked:(id) sender {
 	twitterText.text = @"Unlinked!";
 }
+
+-(IBAction) chooseSongButtonClicked:(id) sender {
+	MPMediaPickerController *picker = [[MPMediaPickerController alloc] initWithMediaTypes: MPMediaTypeMusic];
+	if(picker != nil) // TODO: Not needed to check against nil, remove this (wont work in simulator though)
+	{
+		[picker setDelegate: self];
+		[picker setAllowsPickingMultipleItems: NO];                        
+		picker.prompt = NSLocalizedString (@"Add song to tweet", "Prompt in media item picker");
+	
+		[self presentModalViewController: picker animated: YES];
+		[picker release];
+	}
+}
+
+- (void) mediaPicker: (MPMediaPickerController *) mediaPicker didPickMediaItems: (MPMediaItemCollection *) collection 
+{
+	[self dismissModalViewControllerAnimated: YES];
+
+	// Get song from collection
+	MPMediaItem *mediaItem = [collection representativeItem];
+	if(mediaItem)
+	{
+		[self composeTwitterText: mediaItem];
+	}
+
+}
+
+- (void) mediaPickerDidCancel: (MPMediaPickerController *) mediaPicker 
+{
+	[self dismissModalViewControllerAnimated: YES];
+}
+
 
 @end
