@@ -10,12 +10,14 @@
 
 @protocol FlipsideViewControllerDelegate;
 
-
 @interface FlipsideViewController : UIViewController {
 	id <FlipsideViewControllerDelegate> delegate;
+	IBOutlet UIButton *unlinkTwitterButton;
 }
 
+@property (nonatomic, retain) UIButton *unlinkTwitterButton;
 @property (nonatomic, assign) id <FlipsideViewControllerDelegate> delegate;
+- (IBAction) unlinkTwitterButtonClicked:(id) sender;
 - (IBAction)done:(id)sender;
 @end
 
@@ -24,3 +26,4 @@
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller;
 @end
 
+//- (IBAction) unlinkTwitterButtonClicked:(id) sender;

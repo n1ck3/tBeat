@@ -29,7 +29,6 @@
 
 // When button is pressed
 -(IBAction) buttonClicked: (id) sender;
--(IBAction) unlinkTwitterButtonClicked:(id) sender;
 -(void)setTwitterTextAccordingToPlaybackState;
 
 

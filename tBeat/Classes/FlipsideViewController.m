@@ -12,7 +12,7 @@
 @implementation FlipsideViewController
 
 @synthesize delegate;
-
+@synthesize unlinkTwitterButton;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -47,6 +47,10 @@
 }
 */
 
+- (IBAction) unlinkTwitterButtonClicked:(id) sender {
+	NSLog(@"Link/Unlink Twitter account");
+	[unlinkTwitterButton setEnabled: FALSE];
+}
 
 - (void)dealloc {
     [super dealloc];

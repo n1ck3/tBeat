@@ -18,6 +18,7 @@
 @synthesize musicPlayer;
 @synthesize tweetButton;
 
+
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller {
     
 	[self dismissModalViewControllerAnimated:YES];
@@ -85,14 +86,8 @@
 	
 	UIViewController			*controller = [SA_OAuthTwitterController controllerToEnterCredentialsWithTwitterEngine: _engine delegate: self];
 	
-	if (controller) 
+	if (controller)
 		[self presentModalViewController: controller animated: YES];
-	/*
-	else {
-		[_engine sendUpdate: [NSString stringWithFormat: @"Already Updated. %@", [NSDate date]]];
-	}
-	 */
-	
 }
  
 
@@ -255,19 +250,31 @@
 	[super dealloc];
 }
 
+
+
+
 -(IBAction) buttonClicked:(id) sender {
 	// TODO: Code here should connect to Twitter and send a tweet, use the text
 	// in the twitterText variable.
 	if(tweetButton.isEnabled)
 	{
-		[_engine sendUpdate: [NSString stringWithFormat: twitterText.text]]; 
-		twitterText.text = @"Tweet sent!";
-		[tweetButton setEnabled: FALSE];
+		if ([_engine isAuthorized])
+		{
+			[_engine sendUpdate: [NSString stringWithFormat: twitterText.text]];
+			twitterText.text = @"Tweet sent!";
+			[tweetButton setEnabled: FALSE];
+		}
+		else {
+			// TODO: Show alert popup that you have to link twitter account.
+			UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Not authenticated with twitter"
+														message:@"Click the 'i' and link with twitter."
+														delegate:nil
+														cancelButtonTitle:@"OK"
+														otherButtonTitles:nil] autorelease];
+			[alert show];
+		}
 	}
 }
 
--(IBAction) unlinkTwitterButtonClicked:(id) sender {
-	twitterText.text = @"Unlinked!";
-}
 
 @end
